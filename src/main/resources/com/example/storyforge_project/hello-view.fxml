@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.storyforge_project.HelloController"
+            prefWidth="850.0" prefHeight="500.0">
+
+    <!-- Liste des histoires -->
+    <Label text="Histoires" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+    <ListView fx:id="lvHistoires" prefWidth="220" prefHeight="300"
+              AnchorPane.topAnchor="45" AnchorPane.leftAnchor="20"/>
+
+    <!-- Formulaire Histoire -->
+    <Label text="Titre" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtTitre" prefWidth="180" AnchorPane.topAnchor="45" AnchorPane.leftAnchor="310"/>
+
+    <Label text="Auteur" AnchorPane.topAnchor="90" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtAuteur" prefWidth="180" AnchorPane.topAnchor="85" AnchorPane.leftAnchor="310"/>
+
+    <Label text="Résumé" AnchorPane.topAnchor="130" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtResume" prefWidth="180" AnchorPane.topAnchor="125" AnchorPane.leftAnchor="310"/>
+
+    <Button text="Enregistrer" onAction="#onEnregistrerHistoire"
+            AnchorPane.topAnchor="165" AnchorPane.leftAnchor="310"/>
+    <Button text="Nouvelle" onAction="#onNouvelleHistoire"
+            AnchorPane.topAnchor="165" AnchorPane.leftAnchor="395"/>
+    <Button text="Supprimer" onAction="#onSupprimerHistoire"
+            AnchorPane.topAnchor="165" AnchorPane.leftAnchor="475"/>
+
+    <Label fx:id="lblErreurHistoire" textFill="red" wrapText="true" prefWidth="350"
+           AnchorPane.topAnchor="200" AnchorPane.leftAnchor="260"/>
+
+    <!-- Liste des personnages -->
+    <Label text="Personnages" AnchorPane.topAnchor="260" AnchorPane.leftAnchor="260"/>
+    <ListView fx:id="lvPersonnages" prefWidth="220" prefHeight="180"
+              AnchorPane.topAnchor="285" AnchorPane.leftAnchor="260"/>
+
+    <!-- Formulaire Personnage -->
+    <Label text="Nom" AnchorPane.topAnchor="290" AnchorPane.leftAnchor="510"/>
+    <TextField fx:id="txtNom" prefWidth="180" AnchorPane.topAnchor="285" AnchorPane.leftAnchor="560"/>
+
+    <Label text="Rôle" AnchorPane.topAnchor="330" AnchorPane.leftAnchor="510"/>
+    <TextField fx:id="txtRole" prefWidth="180" AnchorPane.topAnchor="325" AnchorPane.leftAnchor="560"/>
+
+    <Label text="Description" AnchorPane.topAnchor="370" AnchorPane.leftAnchor="510"/>
+    <TextField fx:id="txtDescription" prefWidth="180" AnchorPane.topAnchor="365" AnchorPane.leftAnchor="560"/>
+
+    <Button text="Enregistrer" onAction="#onEnregistrerPersonnage"
+            AnchorPane.topAnchor="405" AnchorPane.leftAnchor="560"/>
+    <Button text="Nouveau" onAction="#onNouveauPersonnage"
+            AnchorPane.topAnchor="405" AnchorPane.leftAnchor="645"/>
+    <Button text="Supprimer" onAction="#onSupprimerPersonnage"
+            AnchorPane.topAnchor="445" AnchorPane.leftAnchor="560"/>
+
+    <Label fx:id="lblErreurPersonnage" textFill="red" wrapText="true" prefWidth="280"
+           AnchorPane.topAnchor="480" AnchorPane.leftAnchor="510"/>
+
+</AnchorPane>

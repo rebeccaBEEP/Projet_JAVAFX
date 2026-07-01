@@ -12,6 +12,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import com.example.storyforge_project.DAO.HistoireDAO;
 import com.example.storyforge_project.DAO.PersonnageDAO;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import com.example.storyforge_project.service.SceneService;
+
+import java.io.IOException;
 
 public class HelloController {
 
@@ -116,6 +122,28 @@ public class HelloController {
             } catch (RuntimeException e) {
                 lblErreurHistoire.setText(e.getMessage());
             }
+        }
+    }
+    
+    @FXML
+    protected void onGererScenes() {
+        if (histoireSelectionnee == null) {
+            lblErreurHistoire.setText("Sélectionnez d'abord une histoire.");
+            return;
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("scene-view.fxml"));
+            Parent root = loader.load();
+
+            SceneController controller = loader.getController();
+            controller.setHistoire(histoireSelectionnee, new SceneService());
+
+            Stage stage = new Stage();
+            stage.setTitle("Scènes - " + histoireSelectionnee.getTitre());
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            lblErreurHistoire.setText("Impossible d'ouvrir l'écran des scènes : " + e.getMessage());
         }
     }
 

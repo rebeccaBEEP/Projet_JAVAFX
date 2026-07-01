@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.storyforge_project.SceneController"
+            prefWidth="950.0" prefHeight="640.0">
+
+    <!-- Titre -->
+    <Label fx:id="lblHistoire" style="-fx-font-weight: bold; -fx-font-size: 14;"
+           AnchorPane.topAnchor="15" AnchorPane.leftAnchor="20"/>
+
+    <!-- Filtres et recherche -->
+    <ComboBox fx:id="cbFiltreStatut" prefWidth="160" AnchorPane.topAnchor="45" AnchorPane.leftAnchor="20"/>
+    <ComboBox fx:id="cbFiltrePersonnage" prefWidth="180" AnchorPane.topAnchor="45" AnchorPane.leftAnchor="190"/>
+    <TextField fx:id="txtRecherche" promptText="Recherche (titre / contenu)" prefWidth="220"
+               AnchorPane.topAnchor="45" AnchorPane.leftAnchor="380"/>
+    <Button text="Réinitialiser" onAction="#onReinitialiserFiltres"
+            AnchorPane.topAnchor="45" AnchorPane.leftAnchor="610"/>
+
+    <!-- Statistiques -->
+    <Label fx:id="lblStatistiques" AnchorPane.topAnchor="80" AnchorPane.leftAnchor="20"/>
+
+    <!-- Liste des scènes -->
+    <Label text="Scènes" AnchorPane.topAnchor="120" AnchorPane.leftAnchor="20"/>
+    <ListView fx:id="lvScenes" prefWidth="220" prefHeight="420"
+              AnchorPane.topAnchor="145" AnchorPane.leftAnchor="20"/>
+
+    <!-- Formulaire Scène -->
+    <Label text="Titre" AnchorPane.topAnchor="120" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtTitreScene" prefWidth="280" AnchorPane.topAnchor="115" AnchorPane.leftAnchor="320"/>
+
+    <Label text="Lieu" AnchorPane.topAnchor="155" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtLieu" prefWidth="280" AnchorPane.topAnchor="150" AnchorPane.leftAnchor="320"/>
+
+    <Label text="Moment" AnchorPane.topAnchor="190" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtMoment" prefWidth="280" AnchorPane.topAnchor="185" AnchorPane.leftAnchor="320"/>
+
+    <Label text="Position" AnchorPane.topAnchor="225" AnchorPane.leftAnchor="260"/>
+    <TextField fx:id="txtPosition" prefWidth="80" AnchorPane.topAnchor="220" AnchorPane.leftAnchor="320"/>
+
+    <Label text="Statut" AnchorPane.topAnchor="225" AnchorPane.leftAnchor="420"/>
+    <ComboBox fx:id="cbStatut" prefWidth="180" AnchorPane.topAnchor="220" AnchorPane.leftAnchor="470"/>
+
+    <Label text="Contenu" AnchorPane.topAnchor="260" AnchorPane.leftAnchor="260"/>
+    <TextArea fx:id="txtContenu" prefWidth="380" prefHeight="120"
+              AnchorPane.topAnchor="285" AnchorPane.leftAnchor="260"/>
+
+    <Label text="Personnages présents (Ctrl/Cmd + clic pour sélection multiple)"
+           AnchorPane.topAnchor="415" AnchorPane.leftAnchor="260"/>
+    <ListView fx:id="lvPersonnagesDisponibles" prefWidth="380" prefHeight="110"
+              AnchorPane.topAnchor="440" AnchorPane.leftAnchor="260"/>
+
+    <Button text="Enregistrer" onAction="#onEnregistrerScene"
+            AnchorPane.topAnchor="560" AnchorPane.leftAnchor="260"/>
+    <Button text="Nouvelle" onAction="#onNouvelleScene"
+            AnchorPane.topAnchor="560" AnchorPane.leftAnchor="350"/>
+    <Button text="Supprimer" onAction="#onSupprimerScene"
+            AnchorPane.topAnchor="560" AnchorPane.leftAnchor="440"/>
+
+    <Label fx:id="lblErreurScene" textFill="red" wrapText="true" prefWidth="650"
+           AnchorPane.topAnchor="530" AnchorPane.leftAnchor="260"/>
+
+</AnchorPane>

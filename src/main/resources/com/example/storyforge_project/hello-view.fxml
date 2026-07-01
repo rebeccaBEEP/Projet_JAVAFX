@@ -52,6 +52,9 @@
             AnchorPane.topAnchor="405" AnchorPane.leftAnchor="645"/>
     <Button text="Supprimer" onAction="#onSupprimerPersonnage"
             AnchorPane.topAnchor="445" AnchorPane.leftAnchor="560"/>
+        
+        <Button text="Gérer les scènes" onAction="#onGererScenes"
+        AnchorPane.topAnchor="165" AnchorPane.leftAnchor="560"/>
 
     <Label fx:id="lblErreurPersonnage" textFill="red" wrapText="true" prefWidth="280"
            AnchorPane.topAnchor="480" AnchorPane.leftAnchor="510"/>

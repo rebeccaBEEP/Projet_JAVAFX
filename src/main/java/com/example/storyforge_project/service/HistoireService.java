@@ -20,11 +20,9 @@ public class HistoireService {
         this.personnageDAO = new PersonnageDAO();
     }
 
-    public HistoireService(HistoireDAO histoireDAO, PersonnageDAO personnageDAO) {
-
+    public HistoireService(IHistoireDAO histoireDAO, IPersonnageDAO personnageDAO) {
         this.histoireDAO = histoireDAO;
         this.personnageDAO = personnageDAO;
-
     }
 
 

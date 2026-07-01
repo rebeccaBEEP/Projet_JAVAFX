@@ -15,7 +15,7 @@ public interface ISceneDAO {
 
     void delete(int id) throws SQLException;
 
-    // Gestion de la relation N-N Scene <-> Personnage
+    // Gestion de la relation N-N Scene
     void associerPersonnage(int sceneId, int personnageId) throws SQLException;
 
     void retirerPersonnage(int sceneId, int personnageId) throws SQLException;
